@@ -1,0 +1,17 @@
+﻿<div class="reset">
+    <div class="heading">{{range.title}}</div>
+    <div class="input-group range-begin pull-left">
+        <span class="input-group-addon">{{range.startLabel}}</span>
+        <input name="startValue" type="text" class="form-control number" [(ngModel)]="range.startValue" />
+        <span class="input-group-addon">{{range.startLabelUnits}}</span>
+    </div>
+    <div class="input-group range-end pull-left">
+        <span class="input-group-addon">{{range.endLabel}}</span>
+        <input name="endValue" type="text" class="form-control number" [(ngModel)]="range.endValue" />
+        <span class="input-group-addon">{{range.endLabelUnits}}</span>
+    </div>
+    <div class="input-group range-number pull-left">
+        <span class="input-group-addon">{{range.numberLabel}}</span>
+        <input name="numberValue" type="text" class="form-control number" [(ngModel)]="range.numberValue" />
+    </div>
+</div>

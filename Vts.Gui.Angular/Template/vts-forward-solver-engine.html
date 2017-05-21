@@ -1,0 +1,11 @@
+﻿<div class="reset">
+    <div class="heading">Forward Solver Engine</div>
+    <select id="forwardSolverEngine" class="form-control" [ngModel]="forwardSolverEngine.value" (ngModelChange)="onChange($event)">
+        <option *ngFor="let fs of forwardSolverEngineList" [value]="fs.value">{{fs.display}}</option>
+    </select><br *ngIf="gaussianBeam.show" />
+    <div class="input-group gaussian" *ngIf="gaussianBeam.show">
+        <span class="input-group-addon">Gaussian Beam Diameter</span>
+        <input type="text" class="form-control gaussian" placeholder="1" [(ngModel)]="gaussianBeam.diameter" />
+        <span class="input-group-addon">mm</span>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+﻿<form name="form1" (submit)="onSubmit()">
+    <!-- Forward Solver Engine -->
+    <vts-forward-solver-engine [gaussianBeam]="gaussianBeam" [forwardSolverEngine]="forwardSolverEngine"></vts-forward-solver-engine>
+    <br /><br />
+    <!-- Solution Domain selection -->
+    <vts-solution-domain [independentAxes]="independentAxes" [solutionDomain]="solutionDomain" [range]="range"></vts-solution-domain>
+    <br /><br /><br /><br />
+    <!-- Optical Property settings -->
+    <vts-optical-properties [opticalProperties]="opticalProperties"></vts-optical-properties>
+    <br /><br /><br /><br />
+    <!-- Optical Property settings -->
+    <vts-model-analysis-type [modelAnalysis]="modelAnalysis"></vts-model-analysis-type>
+    <div class="pull-right"><button id="Simulation" type="submit" class="btn btn-primary">Plot Reflectance</button></div>
+</form>

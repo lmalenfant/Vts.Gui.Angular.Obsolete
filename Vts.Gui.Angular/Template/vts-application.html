@@ -1,0 +1,28 @@
+﻿    <div id="header">
+        <p></p>
+    </div>
+    <div id="content">
+        <div id="input-column" class="col-sm-5 col-md-5">
+            <ul id="input-tabs" class="nav nav-tabs">
+                <li class="active"><a role="tab" data-toggle="tab" href="#pane-fs">Forward Solver/Analysis</a></li>
+                <li><a role="tab" data-toggle="tab" href="#pane-is" style="display: none;">Inverse Solver Panel</a></li>
+            </ul>
+            <div id="input-content" class="tab-content">
+                <div id="pane-fs" class="tab-pane active">
+                    <div class="panel">
+                        <vts-forward-solver></vts-forward-solver>
+                    </div>
+                </div>
+                <div id="pane-is" class="tab-pane">
+                    <div class="panel">
+                        <vts-inverse-solver></vts-inverse-solver>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="plot-column" class="col-sm-7 col-md-7">
+            <ul id="plot-tabs" class="nav nav-tabs"></ul>
+            <div id="plot-content" class="tab-content">
+            </div>
+        </div>
+    </div>

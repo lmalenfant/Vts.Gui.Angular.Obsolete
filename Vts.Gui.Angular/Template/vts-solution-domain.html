@@ -1,0 +1,33 @@
+﻿<div class="reset">
+    <div class="heading">Solution Domain</div>
+    <table class="solutionDomain">
+        <tr>
+            <td>Steady-State</td>
+            <td><input name="SolutionDomain" type="radio" [(ngModel)]="solutionDomain.value" value="rofrho" (click)="setIndependentAxes('ρ', 'mm')"/>&nbsp;R(ρ)</td>
+            <td><input name="SolutionDomain" type="radio" [(ngModel)]="solutionDomain.value" value="roffx" (click)="setIndependentAxes('fx', '1/mm')"/>&nbsp;R(fx)</td>
+        </tr>
+        <tr>
+            <td>Time-Domain</td>
+            <td><input name="SolutionDomain" type="radio" [(ngModel)]="solutionDomain.value" value="rofrhoandt" (click)="setIndependentAxes('ρ', 'mm', 't', 'ns')"/>&nbsp;R(ρ, t)</td>
+            <td><input name="SolutionDomain" type="radio" [(ngModel)]="solutionDomain.value" value="roffxandt" (click)="setIndependentAxes('fx', '1/mm', 't', 'ns')"/>&nbsp;R(fx, t)</td>
+        </tr>
+        <tr>
+            <td>Frequency-Domain</td>
+            <td><input name="SolutionDomain" type="radio" [(ngModel)]="solutionDomain.value" value="rofrhoandft" (click)="setIndependentAxes('ρ', 'mm', 'ft', 'GHz')"/>&nbsp;R(ρ, ft)</td>
+            <td><input name="SolutionDomain" type="radio" [(ngModel)]="solutionDomain.value" value="roffxandft" (click)="setIndependentAxes('fx', '1/mm', 'ft', 'GHz')"/>&nbsp;R(fx, ft)</td>
+        </tr>
+    </table><br *ngIf="independentAxes.show"/>
+    <div *ngIf="independentAxes.show" class="form-inline">
+        Independent Axis:&nbsp;
+        <input name="IndependentAxis" type="radio" [(ngModel)]="independentAxes.label" value="{{independentAxes.second}}" (click)="changeUnits(2)"/>&nbsp;{{independentAxes.first}}&nbsp;
+        <input name="IndependentAxis" type="radio" [(ngModel)]="independentAxes.label" value="{{independentAxes.first}}" (click)="changeUnits(1)"/>&nbsp;{{independentAxes.second}}&nbsp;&nbsp;&nbsp;at&nbsp;&nbsp;
+        <div class="input-group axis">
+            <span class="input-group-addon">{{independentAxes.label}}</span>
+            <input type="text" class="form-control axis" [(ngModel)]="independentAxes.value"/>
+            <span class="input-group-addon">{{independentAxes.units}}</span>
+        </div>
+    </div>
+</div>
+<br />
+<!-- Range -->
+<vts-range [range]="range"></vts-range>
